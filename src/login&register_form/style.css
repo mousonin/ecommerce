@@ -1,0 +1,101 @@
+.login,
+.register {
+  padding: 1rem 2rem;
+  font-weight: 700;
+  background: rgb(255, 255, 255);
+  color: blueviolet;
+  border-radius: 0.5rem;
+  border-bottom: 2px solid rgb(45, 52, 54);
+  border-right: 2px solid rgb(45, 52, 54);
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  transform: translateY(50%);
+  transition-duration: 1s;
+  transition-property: border-top, border-left, border-bottom, border-right, box-shadow;
+}
+.login:hover,
+.register:hover {
+  border-top: 2px solid rgb(45, 52, 54);
+  border-left: 2px solid rgb(45, 52, 54);
+  border-bottom: 2px solid rgb(45, 52, 54);
+  border-right: 2px solid rgb(45, 52, 54);
+  box-shadow: rgb(99, 110, 114) 10px 10px, rgb(178, 190, 195) 20px 20px, rgb(223, 230, 233) 30px 30px;
+}
+
+.container {
+  margin: 20px;
+  font-family: "Open Sans", sans-serif;
+  color: #2d3748;
+  font-size: 12px;
+}
+
+.container > p {
+  font-weight: bolder;
+  font-size: 16px;
+  color: #1a202c;
+}
+
+.container > form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+.container > form p:last-child {
+  text-align: center;
+}
+.container > form p:last-child span {
+  font-weight: bold;
+  color: #1a202c;
+  cursor: pointer;
+}
+
+.container > form > input {
+  line-height: 40px;
+  margin: 4px 0 20px;
+  padding: 0 12px;
+  border-radius: 8px;
+  border: 1px solid rgb(140, 140, 140);
+  outline: none;
+}
+
+button {
+  color: white;
+  border-radius: 8px;
+  width: 100%;
+  height: 44px;
+  border: none;
+  background-color: rgb(45, 52, 54);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+button::after, button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #fff;
+  transition-duration: 0.6s;
+  cursor: pointer;
+}
+button::after {
+  left: 50%;
+  border-top-right-radius: inherit;
+  border-bottom-right-radius: inherit;
+}
+button::before {
+  right: 50%;
+  border-top-left-radius: inherit;
+  border-bottom-left-radius: inherit;
+}
+button:hover::after, button:hover::before {
+  width: 51%;
+}
+button:hover p {
+  z-index: 1;
+  color: rgb(45, 52, 54);
+  font-weight: bold;
+  transition-duration: 0.6s;
+}
