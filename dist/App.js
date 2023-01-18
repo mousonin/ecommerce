@@ -25,8 +25,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = __importStar(require("react"));
 require("./App.scss");
-const Login_1 = require("./login&register_form/Login");
-const Register_1 = require("./login&register_form/Register");
+const Login_1 = require("./components/Login/Login");
+const Register_1 = require("./components/Register/Register");
 function App() {
     const [currentForm, setCurrentForm] = (0, react_1.useState)("login");
     const toggleForm = (formName) => {

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./style.scss";
+import "./Login.module.scss";
 
 export const Login = (props: { onFormSwitch: (arg0: string) => void }) => {
   const [email, setEmail] = useState("");
@@ -12,9 +12,13 @@ export const Login = (props: { onFormSwitch: (arg0: string) => void }) => {
   return (
     <div className="login">
       <div className="container">
-        <div className="social-login">
-          <div className="google"></div>
-          <div className="facebook"></div>
+        <div className="social-log">
+          <div className="google">
+            <button>Continue with Google</button>
+          </div>
+          <div className="facebook">
+            <button>Continue with Facebook</button>
+          </div>
         </div>
         <p>Sign up</p>
         <div className="loader">
@@ -40,7 +44,7 @@ export const Login = (props: { onFormSwitch: (arg0: string) => void }) => {
             defaultValue={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button type="submit">
+          <button className="sign" type="submit">
             <p>Log in</p>
           </button>
           <p>

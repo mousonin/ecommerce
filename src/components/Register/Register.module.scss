@@ -1,0 +1,149 @@
+.login,
+.register {
+  padding: 1rem 2rem;
+  font-weight: 700;
+  background: rgb(255, 255, 255);
+  color: blueviolet;
+  border-radius: 0.5rem;
+  border-bottom: 2px solid rgb(45, 52, 54);
+  border-right: 2px solid rgb(45, 52, 54);
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  transform: translateY(50%);
+  transition-duration: 1s;
+  transition-property: border-top, border-left, border-bottom, border-right,
+    box-shadow;
+  &:hover {
+    border-top: 2px solid rgb(45, 52, 54);
+    border-left: 2px solid rgb(45, 52, 54);
+    border-bottom: 2px solid rgb(45, 52, 54);
+    border-right: 2px solid rgb(45, 52, 54);
+    box-shadow: rgb(99, 110, 114) 10px 10px, rgb(178, 190, 195) 20px 20px,
+      rgb(223, 230, 233) 30px 30px;
+  }
+}
+
+.container {
+  margin: 20px;
+  font-family: "Open Sans", sans-serif;
+  color: #2d3748;
+  font-size: 12px;
+}
+
+.container > p {
+  font-weight: bolder;
+  font-size: 16px;
+  color: #1a202c;
+}
+
+.container > form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  & p:last-child {
+    text-align: center;
+    & span {
+      font-weight: bold;
+      color: #1a202c;
+      cursor: pointer;
+    }
+  }
+}
+
+.container > form > input {
+  line-height: 40px;
+  margin: 4px 0 20px;
+  padding: 0 12px;
+  border-radius: 8px;
+  border: 1px solid rgb(140, 140, 140);
+  outline: none;
+  display: block;
+}
+
+.sign {
+  color: white;
+  border-radius: 8px;
+  width: 100%;
+  height: 44px;
+  border: none;
+  background-color: rgb(45, 52, 54);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 0%;
+    height: calc(100% - 2px);
+    background-color: #fff;
+    transition-duration: 0.6s;
+    border-radius: inherit;
+  }
+  &:hover::after {
+    width: calc(100% - 2px);
+  }
+  &:hover p {
+    z-index: 1;
+    color: rgb(45, 52, 54);
+    font-weight: bold;
+    transition-duration: 0.6s;
+  }
+}
+
+.loader {
+  text-align: center;
+  width: 100%;
+  height: 4px;
+  border-radius: 30px;
+  position: relative;
+  margin-bottom: 40px;
+  & > p {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    background-color: #fff;
+    transform: translateY(calc(100% - 4px));
+    padding: 8px;
+    z-index: 1;
+    border-radius: 50%;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    background-color: rgb(99, 110, 114);
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    border-radius: 30px;
+    animation: moving 4s linear infinite;
+  }
+}
+
+@keyframes moving {
+  50% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0;
+    right: 0;
+    left: unset;
+  }
+}
+
+.social-log > div > button {
+  color: white;
+  border-radius: 8px;
+  width: 100%;
+  height: 44px;
+  border: none;
+  background-color: rgb(45, 52, 54);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
