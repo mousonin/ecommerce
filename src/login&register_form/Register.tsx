@@ -12,6 +12,9 @@ export const Register = (props: { onFormSwitch: (arg0: string) => void }) => {
     <div className="register">
       <div className="container">
         <p>Log in</p>
+        <div className="loader">
+          <p>OR</p>
+        </div>
         <form onSubmit={handleSubmit}>
           <label htmlFor="email">Full name</label>
           <input

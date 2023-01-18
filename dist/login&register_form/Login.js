@@ -35,7 +35,12 @@ const Login = (props) => {
     }
     return (react_1.default.createElement("div", { className: "login" },
         react_1.default.createElement("div", { className: "container" },
+            react_1.default.createElement("div", { className: "social-login" },
+                react_1.default.createElement("div", { className: "google" }),
+                react_1.default.createElement("div", { className: "facebook" })),
             react_1.default.createElement("p", null, "Sign up"),
+            react_1.default.createElement("div", { className: "loader" },
+                react_1.default.createElement("p", null, "OR")),
             react_1.default.createElement("form", { onSubmit: handleSubmit },
                 react_1.default.createElement("label", { htmlFor: "email" }, "Email"),
                 react_1.default.createElement("input", { type: "email", name: "email", id: "email", defaultValue: email, onChange: (e) => setEmail(e.target.value) }),

@@ -12,7 +12,14 @@ export const Login = (props: { onFormSwitch: (arg0: string) => void }) => {
   return (
     <div className="login">
       <div className="container">
+        <div className="social-login">
+          <div className="google"></div>
+          <div className="facebook"></div>
+        </div>
         <p>Sign up</p>
+        <div className="loader">
+          <p>OR</p>
+        </div>
         <form onSubmit={handleSubmit}>
           <label htmlFor="email">Email</label>
           <input

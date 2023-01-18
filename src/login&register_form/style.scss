@@ -57,6 +57,7 @@
   border-radius: 8px;
   border: 1px solid rgb(140, 140, 140);
   outline: none;
+  display: block;
 }
 
 button {
@@ -70,35 +71,66 @@ button {
   justify-content: center;
   align-items: center;
   position: relative;
-  &::after,
-  &::before {
+  &::after {
     content: "";
     position: absolute;
-    top: 0;
+    top: 1px;
+    left: 1px;
     width: 0%;
-    height: 100%;
+    height: calc(100% - 2px);
     background-color: #fff;
     transition-duration: 0.6s;
-    cursor: pointer;
+    border-radius: inherit;
   }
-  &::after {
-    left: 50%;
-    border-top-right-radius: inherit;
-    border-bottom-right-radius: inherit;
-  }
-  &::before {
-    right: 50%;
-    border-top-left-radius: inherit;
-    border-bottom-left-radius: inherit;
-  }
-  &:hover::after,
-  &:hover::before {
-    width: 51%;
+  &:hover::after {
+    width: calc(100% - 2px);
   }
   &:hover p {
     z-index: 1;
     color: rgb(45, 52, 54);
     font-weight: bold;
     transition-duration: 0.6s;
+  }
+}
+
+.loader {
+  text-align: center;
+  width: 100%;
+  height: 4px;
+  border-radius: 30px;
+  position: relative;
+  margin-bottom: 40px;
+  & > p {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    background-color: #fff;
+    transform: translateY(calc(100% - 4px));
+    padding: 8px;
+    z-index: 1;
+    border-radius: 50%;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    background-color: rgb(99, 110, 114);
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    border-radius: 30px;
+    animation: moving 4s linear infinite;
+  }
+}
+
+@keyframes moving {
+  50% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0;
+    right: 0;
+    left: unset;
   }
 }

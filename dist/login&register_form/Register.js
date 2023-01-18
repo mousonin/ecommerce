@@ -37,6 +37,8 @@ const Register = (props) => {
     return (react_1.default.createElement("div", { className: "register" },
         react_1.default.createElement("div", { className: "container" },
             react_1.default.createElement("p", null, "Log in"),
+            react_1.default.createElement("div", { className: "loader" },
+                react_1.default.createElement("p", null, "OR")),
             react_1.default.createElement("form", { onSubmit: handleSubmit },
                 react_1.default.createElement("label", { htmlFor: "email" }, "Full name"),
                 react_1.default.createElement("input", { type: "text", name: "email", id: "email", defaultValue: fullName, onChange: (e) => setFullName(e.target.value) }),
