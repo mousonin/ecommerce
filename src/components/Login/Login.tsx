@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Login.module.scss";
+import "./Login.scss";
 
 export const Login = (props: { onFormSwitch: (arg0: string) => void }) => {
   const [email, setEmail] = useState("");

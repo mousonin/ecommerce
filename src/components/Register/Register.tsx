@@ -1,10 +1,8 @@
-import clsx from "clsx";
+
 import React, { useState } from "react";
-import styles form "./Register.module.scss";
+import "./Register.scss";
 export const Register = (props: { onFormSwitch: (arg0: string) => void }, {primary} : any) => {
-  const classes = clsx(styles.btn, {
-    [styles.primary] : primary,
-  })
+
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
