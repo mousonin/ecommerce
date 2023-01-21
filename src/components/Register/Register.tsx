@@ -1,8 +1,7 @@
-
 import React, { useState } from "react";
-import "./Register.scss";
-export const Register = (props: { onFormSwitch: (arg0: string) => void }, {primary} : any) => {
+import styles from "./Register.module.scss";
 
+export const Register = (props: { onFormSwitch: (arg0: string) => void }) => {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -11,18 +10,26 @@ export const Register = (props: { onFormSwitch: (arg0: string) => void }, {prima
     console.log(password + " ");
   }
   return (
-    <div className="register">
-      <div className="container">
+    <div className={styles.register}>
+      <div className={styles.container}>
+      <div className={styles["social-log"]}>
+          <div>
+            <button>Continue with Google</button>
+          </div>
+          <div>
+            <button>Continue with Facebook</button>
+          </div>
+        </div>
         <p>Log in</p>
-        <div className="loader">
+        <div className={styles.loader}>
           <p>OR</p>
         </div>
         <form onSubmit={handleSubmit}>
-          <label htmlFor="email">Full name</label>
+          <label htmlFor="name">Full name</label>
           <input
             type="text"
-            name="email"
-            id="email"
+            name="name"
+            id="name"
             defaultValue={fullName}
             onChange={(e) => setFullName(e.target.value)}
           />
@@ -42,12 +49,12 @@ export const Register = (props: { onFormSwitch: (arg0: string) => void }, {prima
             defaultValue={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button type="submit">
+          <button className={styles.sign} type="submit">
             <p>Log in</p>
           </button>
           <p>
             Already have an account?
-            <span className="" onClick={() => props.onFormSwitch("login")}>
+            <span onClick={() => props.onFormSwitch("login")}>
               Log in
             </span>
           </p>

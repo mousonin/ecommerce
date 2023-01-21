@@ -1,31 +1,12 @@
 "use strict";
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Login = void 0;
-const react_1 = __importStar(require("react"));
-require("./Login.module.scss");
+const jsx_runtime_1 = require("react/jsx-runtime");
+const react_1 = require("react");
+const Login_module_scss_1 = __importDefault(require("./Login.module.scss"));
 const Login = (props) => {
     const [email, setEmail] = (0, react_1.useState)("");
     const [password, setPassword] = (0, react_1.useState)("");
@@ -33,27 +14,6 @@ const Login = (props) => {
         e.preventDefault();
         console.log(password + " ");
     }
-    return (react_1.default.createElement("div", { className: "login" },
-        react_1.default.createElement("div", { className: "container" },
-            react_1.default.createElement("div", { className: "social-log" },
-                react_1.default.createElement("div", { className: "google" },
-                    react_1.default.createElement("button", null, "Continue with Google")),
-                react_1.default.createElement("div", { className: "facebook" },
-                    react_1.default.createElement("button", null, "Continue with Facebook"))),
-            react_1.default.createElement("p", null, "Sign up"),
-            react_1.default.createElement("div", { className: "loader" },
-                react_1.default.createElement("p", null, "OR")),
-            react_1.default.createElement("form", { onSubmit: handleSubmit },
-                react_1.default.createElement("label", { htmlFor: "email" }, "Email"),
-                react_1.default.createElement("input", { type: "email", name: "email", id: "email", defaultValue: email, onChange: (e) => setEmail(e.target.value) }),
-                react_1.default.createElement("span", null),
-                react_1.default.createElement("label", { htmlFor: "password underline decoration-sky-500" }, "Password"),
-                react_1.default.createElement("input", { type: "password", name: "password", id: "password", defaultValue: password, onChange: (e) => setPassword(e.target.value) }),
-                react_1.default.createElement("button", { className: "sign", type: "submit" },
-                    react_1.default.createElement("p", null, "Log in")),
-                react_1.default.createElement("p", null,
-                    "Don't have an account?",
-                    " ",
-                    react_1.default.createElement("span", { onClick: () => props.onFormSwitch("register") }, "Sign up"))))));
+    return ((0, jsx_runtime_1.jsx)("div", { className: Login_module_scss_1.default.login, children: (0, jsx_runtime_1.jsxs)("div", { className: Login_module_scss_1.default.container, children: [(0, jsx_runtime_1.jsxs)("div", { className: Login_module_scss_1.default["social-log"], children: [(0, jsx_runtime_1.jsx)("div", { children: (0, jsx_runtime_1.jsx)("button", { children: "Continue with Google" }) }), (0, jsx_runtime_1.jsx)("div", { children: (0, jsx_runtime_1.jsx)("button", { children: "Continue with Facebook" }) })] }), (0, jsx_runtime_1.jsx)("p", { children: "Sign up" }), (0, jsx_runtime_1.jsx)("div", { className: Login_module_scss_1.default.loader, children: (0, jsx_runtime_1.jsx)("p", { children: "OR" }) }), (0, jsx_runtime_1.jsxs)("form", { onSubmit: handleSubmit, children: [(0, jsx_runtime_1.jsx)("label", { htmlFor: "email", children: "Email" }), (0, jsx_runtime_1.jsx)("input", { type: "email", name: "email", id: "email", defaultValue: email, onChange: (e) => setEmail(e.target.value) }), (0, jsx_runtime_1.jsx)("span", {}), (0, jsx_runtime_1.jsx)("label", { htmlFor: "password", children: "Password" }), (0, jsx_runtime_1.jsx)("input", { type: "password", name: "password", id: "password", defaultValue: password, onChange: (e) => setPassword(e.target.value) }), (0, jsx_runtime_1.jsx)("button", { className: Login_module_scss_1.default.sign, type: "submit", children: (0, jsx_runtime_1.jsx)("p", { children: "Log in" }) }), (0, jsx_runtime_1.jsxs)("p", { children: ["Don't have an account?", (0, jsx_runtime_1.jsx)("span", { onClick: () => props.onFormSwitch("register"), children: "Sign up" })] })] })] }) }));
 };
 exports.Login = Login;

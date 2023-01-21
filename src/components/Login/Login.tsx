@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Login.scss";
+import styles from "./Login.module.scss";
 
 export const Login = (props: { onFormSwitch: (arg0: string) => void }) => {
   const [email, setEmail] = useState("");
@@ -10,18 +10,18 @@ export const Login = (props: { onFormSwitch: (arg0: string) => void }) => {
     console.log(password + " ");
   }
   return (
-    <div className="login">
-      <div className="container">
-        <div className="social-log">
-          <div className="google">
+    <div className={styles.login}>
+      <div className={styles.container}>
+        <div className={styles["social-log"]}>
+          <div>
             <button>Continue with Google</button>
           </div>
-          <div className="facebook">
+          <div>
             <button>Continue with Facebook</button>
           </div>
         </div>
         <p>Sign up</p>
-        <div className="loader">
+        <div className={styles.loader}>
           <p>OR</p>
         </div>
         <form onSubmit={handleSubmit}>
@@ -34,7 +34,7 @@ export const Login = (props: { onFormSwitch: (arg0: string) => void }) => {
             onChange={(e) => setEmail(e.target.value)}
           />
           <span></span>
-          <label htmlFor="password underline decoration-sky-500">
+          <label htmlFor="password">
             Password
           </label>
           <input
@@ -44,11 +44,11 @@ export const Login = (props: { onFormSwitch: (arg0: string) => void }) => {
             defaultValue={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button className="sign" type="submit">
+          <button className={styles.sign} type="submit">
             <p>Log in</p>
           </button>
           <p>
-            Don't have an account?{" "}
+            Don't have an account?
             <span onClick={() => props.onFormSwitch("register")}>Sign up</span>
           </p>
         </form>
