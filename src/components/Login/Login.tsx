@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Login.module.scss";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGoogle, faFacebookF } from '@fortawesome/free-brands-svg-icons'
 
 export const Login = (props: { onFormSwitch: (arg0: string) => void }) => {
   const [email, setEmail] = useState("");
@@ -12,15 +14,22 @@ export const Login = (props: { onFormSwitch: (arg0: string) => void }) => {
   return (
     <div className={styles.login}>
       <div className={styles.container}>
+        <p>Sign up</p>
         <div className={styles["social-log"]}>
           <div>
-            <button>Continue with Google</button>
+            <button className={`${styles.sign} ${styles.google}`}>
+              <p>Continue with Google</p>
+              <FontAwesomeIcon className={styles['social-icon']} icon={faGoogle} />
+            </button>
           </div>
+          <br />
           <div>
-            <button>Continue with Facebook</button>
+            <button className={`${styles.sign} ${styles.facebook}`}>
+              <p>Continue with Facebook</p>
+              <FontAwesomeIcon className={styles['social-icon']} icon={faFacebookF} />
+            </button>
           </div>
         </div>
-        <p>Sign up</p>
         <div className={styles.loader}>
           <p>OR</p>
         </div>
@@ -34,9 +43,7 @@ export const Login = (props: { onFormSwitch: (arg0: string) => void }) => {
             onChange={(e) => setEmail(e.target.value)}
           />
           <span></span>
-          <label htmlFor="password">
-            Password
-          </label>
+          <label htmlFor="password">Password</label>
           <input
             type="password"
             name="password"
