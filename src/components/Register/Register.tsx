@@ -9,9 +9,24 @@ export const Register = (props: { onFormSwitch: (arg0: string) => void }) => {
   const [password, setPassword] = useState("");
   function handleSubmit(e: React.FormEvent<EventTarget>) {
     e.preventDefault();
-    console.log(password + " ");
   }
-  
+
+  async function register() {
+    await fetch("http://localhost:3001/users/register", {
+      method: "POST",
+      body: JSON.stringify({
+        fullName,
+        email,
+        password,
+      }),
+      headers: {
+        "content-type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((json) => console.log(json));
+  }
+
   return (
     <div className={styles.register}>
       <div className={styles.container}>
@@ -46,7 +61,6 @@ export const Register = (props: { onFormSwitch: (arg0: string) => void }) => {
             type="text"
             name="name"
             id="name"
-            defaultValue={fullName}
             onChange={(e) => setFullName(e.target.value)}
           />
           <label htmlFor="email">Email</label>
@@ -54,7 +68,6 @@ export const Register = (props: { onFormSwitch: (arg0: string) => void }) => {
             type="email"
             name="email"
             id="email"
-            defaultValue={email}
             onChange={(e) => setEmail(e.target.value)}
           />
           <label htmlFor="password">Password</label>
@@ -62,10 +75,9 @@ export const Register = (props: { onFormSwitch: (arg0: string) => void }) => {
             type="password"
             name="password"
             id="password"
-            defaultValue={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button className={styles.sign} type="submit">
+          <button className={styles.sign} type="submit" onClick={register}>
             <p>Log in</p>
           </button>
           <p>

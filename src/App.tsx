@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import * as React from "react";
+import { useState } from "react";
 import "./App.scss";
 import { Login } from "./components/Login/Login";
 import { Register } from "./components/Register/Register";
