@@ -78,7 +78,7 @@ export const Register = (props: { onFormSwitch: (arg0: string) => void }) => {
             onChange={(e) => setPassword(e.target.value)}
           />
           <button className={styles.sign} type="submit" onClick={register}>
-            <p>Log in</p>
+            <p>Sign up</p>
           </button>
           <p>
             Already have an account?

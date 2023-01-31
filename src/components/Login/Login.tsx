@@ -1,32 +1,66 @@
 import React, { useState } from "react";
 import styles from "./Login.module.scss";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGoogle, faFacebookF } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGoogle, faFacebookF } from "@fortawesome/free-brands-svg-icons";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { auth } from "../../utils/firebase";
 
 export const Login = (props: { onFormSwitch: (arg0: string) => void }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const googleProvider = new GoogleAuthProvider();
+  const googleLogin = async () => {
+    try {
+      const results = await signInWithPopup(auth, googleProvider);
+      console.log(results);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   function handleSubmit(e: React.FormEvent<EventTarget>) {
     e.preventDefault();
-    console.log(password + " ");
+  }
+
+  async function login() {
+    fetch("http://localhost:3001/users/login", {
+      method: "POST",
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+      headers: {
+        "content-type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((json) => console.log(json));
   }
   return (
     <div className={styles.login}>
       <div className={styles.container}>
-        <p>Sign up</p>
+        <p className="text-3xl font-bold underline">Sign up</p>
         <div className={styles["social-log"]}>
           <div>
-            <button className={`${styles.sign} ${styles.google}`}>
+            <button
+              onClick={googleLogin}
+              className={`${styles.sign} ${styles.google}`}
+            >
               <p>Continue with Google</p>
-              <FontAwesomeIcon className={styles['social-icon']} icon={faGoogle} />
+              <FontAwesomeIcon
+                className={styles["social-icon"]}
+                icon={faGoogle}
+              />
             </button>
           </div>
           <br />
           <div>
             <button className={`${styles.sign} ${styles.facebook}`}>
               <p>Continue with Facebook</p>
-              <FontAwesomeIcon className={styles['social-icon']} icon={faFacebookF} />
+              <FontAwesomeIcon
+                className={styles["social-icon"]}
+                icon={faFacebookF}
+              />
             </button>
           </div>
         </div>
@@ -51,7 +85,7 @@ export const Login = (props: { onFormSwitch: (arg0: string) => void }) => {
             defaultValue={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button className={styles.sign} type="submit">
+          <button className={styles.sign} type="submit" onClick={login}>
             <p>Log in</p>
           </button>
           <p>
