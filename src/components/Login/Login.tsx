@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import styles from "./Login.module.scss";
+<<<<<<< HEAD
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle, faFacebookF } from "@fortawesome/free-brands-svg-icons";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "../../utils/firebase";
+=======
+>>>>>>> parent of d223687 (add fontawesome in login by other ways)
 
 export const Login = (props: { onFormSwitch: (arg0: string) => void }) => {
   const [email, setEmail] = useState("");
@@ -39,6 +42,7 @@ export const Login = (props: { onFormSwitch: (arg0: string) => void }) => {
   return (
     <div className={styles.login}>
       <div className={styles.container}>
+<<<<<<< HEAD
         <p className="text-3xl font-bold underline">Sign up</p>
         <div className={styles["social-log"]}>
           <div>
@@ -52,9 +56,14 @@ export const Login = (props: { onFormSwitch: (arg0: string) => void }) => {
                 icon={faGoogle}
               />
             </button>
-          </div>
-          <br />
+=======
+        <div className={styles["social-log"]}>
           <div>
+            <button>Continue with Google</button>
+>>>>>>> parent of d223687 (add fontawesome in login by other ways)
+          </div>
+          <div>
+<<<<<<< HEAD
             <button className={`${styles.sign} ${styles.facebook}`}>
               <p>Continue with Facebook</p>
               <FontAwesomeIcon
@@ -62,8 +71,12 @@ export const Login = (props: { onFormSwitch: (arg0: string) => void }) => {
                 icon={faFacebookF}
               />
             </button>
+=======
+            <button>Continue with Facebook</button>
+>>>>>>> parent of d223687 (add fontawesome in login by other ways)
           </div>
         </div>
+        <p>Sign up</p>
         <div className={styles.loader}>
           <p>OR</p>
         </div>
@@ -77,7 +90,9 @@ export const Login = (props: { onFormSwitch: (arg0: string) => void }) => {
             onChange={(e) => setEmail(e.target.value)}
           />
           <span></span>
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">
+            Password
+          </label>
           <input
             type="password"
             name="password"

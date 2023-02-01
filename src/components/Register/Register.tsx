@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import styles from "./Register.module.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGoogle, faFacebookF } from "@fortawesome/free-brands-svg-icons";
 
 export const Register = (props: { onFormSwitch: (arg0: string) => void }) => {
   const [fullName, setFullName] = useState("");
@@ -11,32 +9,18 @@ export const Register = (props: { onFormSwitch: (arg0: string) => void }) => {
     e.preventDefault();
     console.log(password + " ");
   }
-  
   return (
     <div className={styles.register}>
       <div className={styles.container}>
-        <p>Log in</p>
-        <div className={styles["social-log"]}>
+      <div className={styles["social-log"]}>
           <div>
-            <button className={`${styles.sign} ${styles.google}`}>
-              <p>Continue with Google</p>
-              <FontAwesomeIcon
-                className={styles["social-icon"]}
-                icon={faGoogle}
-              />
-            </button>
+            <button>Continue with Google</button>
           </div>
-          <br />
           <div>
-            <button className={`${styles.sign} ${styles.facebook}`}>
-              <p>Continue with Facebook</p>
-              <FontAwesomeIcon
-                className={styles["social-icon"]}
-                icon={faFacebookF}
-              />
-            </button>
+            <button>Continue with Facebook</button>
           </div>
         </div>
+        <p>Log in</p>
         <div className={styles.loader}>
           <p>OR</p>
         </div>
@@ -78,7 +62,9 @@ export const Register = (props: { onFormSwitch: (arg0: string) => void }) => {
           </button>
           <p>
             Already have an account?
-            <span onClick={() => props.onFormSwitch("login")}>Log in</span>
+            <span onClick={() => props.onFormSwitch("login")}>
+              Log in
+            </span>
           </p>
         </form>
       </div>

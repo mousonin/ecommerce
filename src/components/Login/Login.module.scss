@@ -1,4 +1,5 @@
-.login {
+.login,
+.register {
   padding: 1rem 2rem;
   font-weight: 700;
   background: rgb(255, 255, 255);
@@ -91,32 +92,13 @@
   }
 }
 
-.google,
-.facebook {
-  &:hover p {
-    transform: translateX(-10px);
-  }
-  & .social-icon {
-    transform: translateY(100%);
-    opacity: 0;
-    transition-duration: 0.4s;
-    transition-delay: 0.2s;
-  }
-  &:hover .social-icon {
-    transform: unset;
-    opacity: 1;
-    z-index: 1;
-    color: #1a202c;
-  }
-}
-
 .loader {
   text-align: center;
   width: 100%;
   height: 4px;
   border-radius: 30px;
   position: relative;
-  margin: 40px 0;
+  margin-bottom: 40px;
   & > p {
     position: absolute;
     bottom: 0;
@@ -164,4 +146,3 @@
   align-items: center;
   position: relative;
 }
-
