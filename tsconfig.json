@@ -27,11 +27,15 @@
     "noEmit": true
   },
 <<<<<<< HEAD
+<<<<<<< HEAD
   "include": [
     "src/**/*",
     "env.d.ts",
     "babel.config.js"
   ]
+=======
+  "include": ["src/**/*","env.d.ts"]
+>>>>>>> parent of d223687 (add fontawesome in login by other ways)
 =======
   "include": ["src/**/*","env.d.ts"]
 >>>>>>> parent of d223687 (add fontawesome in login by other ways)

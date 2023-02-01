@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import styles from "./Login.module.scss";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle, faFacebookF } from "@fortawesome/free-brands-svg-icons";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "../../utils/firebase";
+=======
+>>>>>>> parent of d223687 (add fontawesome in login by other ways)
 =======
 >>>>>>> parent of d223687 (add fontawesome in login by other ways)
 
@@ -43,6 +46,7 @@ export const Login = (props: { onFormSwitch: (arg0: string) => void }) => {
     <div className={styles.login}>
       <div className={styles.container}>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <p className="text-3xl font-bold underline">Sign up</p>
         <div className={styles["social-log"]}>
           <div>
@@ -72,6 +76,14 @@ export const Login = (props: { onFormSwitch: (arg0: string) => void }) => {
               />
             </button>
 =======
+            <button>Continue with Facebook</button>
+>>>>>>> parent of d223687 (add fontawesome in login by other ways)
+=======
+        <div className={styles["social-log"]}>
+          <div>
+            <button>Continue with Google</button>
+          </div>
+          <div>
             <button>Continue with Facebook</button>
 >>>>>>> parent of d223687 (add fontawesome in login by other ways)
           </div>
