@@ -66,9 +66,12 @@ export const Register = (props: { onFormSwitch: (arg0: string) => void }) => {
             onChange={(e) => setPassword(e.target.value)}
           />
 <<<<<<< HEAD
+<<<<<<< HEAD
           <button className={styles.sign} type="submit" onClick={register}>
             <p>Sign up</p>
 =======
+=======
+>>>>>>> parent of 531d008 (add fetch data from localhost)
           <button className={styles.sign} type="submit">
             <p>Log in</p>
 >>>>>>> parent of 531d008 (add fetch data from localhost)

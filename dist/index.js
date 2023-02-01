@@ -21,4 +21,7 @@ const react_1 = __importDefault(require("react"));
 const client_1 = __importDefault(require("react-dom/client"));
 const App_1 = __importDefault(require("./App"));
 client_1.default.createRoot(document.getElementById("root")).render((0, jsx_runtime_1.jsxs)(react_1.default.StrictMode, { children: [(0, jsx_runtime_1.jsx)(App_1.default, {}), (0, jsx_runtime_1.jsx)("link", { rel: "preconnect", href: "https://fonts.googleapis.com" })] }));
+<<<<<<< HEAD
+>>>>>>> parent of 531d008 (add fetch data from localhost)
+=======
 >>>>>>> parent of 531d008 (add fetch data from localhost)
